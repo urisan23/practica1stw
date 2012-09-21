@@ -1,0 +1,9 @@
+<html>
+  <body>
+    <form name="input" action="/throw" method="get">
+      Tu jugada: <input type="text" name="user" />
+		<input type="submit" value="Submit" />
+    </form>
+    <%= yield %>
+  </body>
+</html>

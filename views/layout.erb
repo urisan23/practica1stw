@@ -5,8 +5,10 @@
    </head>
 
    <body>
-      <%= yield =%>
-      <form>
+      <%= yield %>
+      <form name="input" action="html_form_action.asp" method="get">
+         Your play: <input type="text" name="play"/>
+         <input type="submit" value="Let's play!"/>
       </form>
    </body>
 </html>

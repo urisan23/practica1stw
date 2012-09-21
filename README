@@ -1,9 +1,6 @@
-- Use ruby 1.9.2 or later 
-- Optionally: Install rvm and learn to use it
-- Install  the following gems
-    gem install sinatra
-    gem install shotgun
-    gem install haml
-    gem install rails (not really necessary)
-- To see the options for the Rakefile run
-   rake -T
+Practica 1 - Mejorar Rock, Paper, Scissors
+
+- Mejorar ejemplo para que se solicite en un formulario la jugada.
+- Mejorar mediante una hoja de estilo la presentacion de los resultados.
+- ¿Que ocurre si la jugada es erronea? ¿Y si es la cadena vacia? ¿Se distingue entre mayusculas y minusculas? 
+

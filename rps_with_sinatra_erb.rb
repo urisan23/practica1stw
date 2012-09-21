@@ -9,8 +9,8 @@ before do
   @throws = @defeat.keys
 end
 
-get '/' do
-    erb :index
+get '\/' do
+	
 end
 
 get '/throw/:type' do
@@ -32,16 +32,3 @@ get '/throw/:type' do
     erb :index
   end
 end
-__END__
-
-@@index
-<html>
-  <head>
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
-    <h2> Computer chooses:  <%= @computer_throw %> </h2>
-    <h2> You choose: <%= @player_throw %> </h2>
-    <h1> <%= @answer %> </h1>
-  </body>
-</html>

@@ -1,0 +1,14 @@
+<html>
+  <head>
+  <title> Rock, Paper, Scissors </title>
+  <link rel = "stylesheet" type = "text/css"
+           href = "/style.css"/>
+  </head>
+  <body>
+    <form name="input" action="/throw" method="get">
+      Tu jugada: <input type="text" name="user" />
+		<input type="submit" value="Submit" />
+    </form>
+    <%= yield %>
+  </body>
+</html>

@@ -1,9 +1,6 @@
 require 'sinatra'
 require 'erb'
 
-# before we process a route we'll set the response as plain text
-# and set up an array of viable moves that a player (and the
-# computer) can perform
 before do
   @defeat = { rock: :scissors, paper: :rock, scissors: :paper}
   @throws = @defeat.keys
@@ -32,17 +29,3 @@ get '/throw/:type' do
     erb :index
   end
 end
-__END__
-
-
-@@index
-<html>
-  <head>
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
-    <h2> Computer chooses:  <%= @computer_throw %> </h2>
-    <h2> You choose: <%= @player_throw %> </h2>
-    <h1> <%= @answer %> </h1>
-  </body>
-</html>

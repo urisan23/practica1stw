@@ -34,6 +34,7 @@ get '/throw/:type' do
 end
 __END__
 
+
 @@index
 <html>
   <head>

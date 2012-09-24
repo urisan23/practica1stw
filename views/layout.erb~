@@ -5,6 +5,6 @@
            href = "/style.css"/>
   </head>
   <body>
-    <%= yield %>
+    <center><h1> Rock, Paper, Scissors </h1></center>
   </body>
 </html>

@@ -1,9 +1,4 @@
-<html>
-  <body>
-    <form name="input" action="/throw" method="get">
-      Tu jugada: <input type="text" name="user" />
-		<input type="submit" value="Submit" />
-    </form>
-    <%= yield %>
-  </body>
-</html>
+<form name="input" action="/" method="get">
+   Tu jugada: <input type="text" name="jugada" />
+	<input type="submit" value="Aceptar" />
+</form>

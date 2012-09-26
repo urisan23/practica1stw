@@ -1,4 +1,7 @@
-<form name="input" action="/" method="get">
-   Tu jugada: <input type="text" name="jugada" />
-	<input type="submit" value="Aceptar" />
-</form>
+<center>
+  <form name="input" action="/throw" method="get">
+    Your play: <input type="text" name="play" pattern="[^\s]{1,}"  <!-- Con la expresion regular se evita que se use el espacio como cadena vacia -->
+    title="Empty string doesn't allow!"/>
+    <input type="submit" value="Accept" />
+  </form>
+</center>

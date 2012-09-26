@@ -14,7 +14,7 @@ get '\/' do
 end
 
 get '/throw' do
-	redirect "/throw/#{@params[:jugada].to_sym}"
+	redirect "/throw/#{@params[:play].to_sym}"
 end
 
 get '/throw/:type' do
@@ -22,17 +22,15 @@ get '/throw/:type' do
   @player_throw = params[:type].to_sym.downcase
   
   halt(403, "You must throw one of the following: '#{@throws.join(', ')}'") unless @throws.include? @player_throw
-  #halt(403, "You must throw one of the following: '#{@throws.join(', ')}'") if @player_throw =~ /\s/
+  
   @computer_throw = @throws.sample
 
   if @player_throw == @computer_throw 
     @answer = "There is a tie"
-    erb :index
   elsif @player_throw == @defeat[@computer_throw]
     @answer = "Computer wins; #{@computer_throw} defeats #{@player_throw}"
-    erb :index
   else
     @answer = "Well done. #{@player_throw} beats #{@computer_throw}"
-    erb :index
   end
+  erb :index
 end

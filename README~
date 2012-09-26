@@ -5,6 +5,5 @@ Practica 1 - Mejorar Rock, Paper, Scissors
 - ¿Que ocurre si la jugada es erronea? ¿Y si es la cadena vacia?  
      Si la jugada es erronea se produce una interrupcion y se genera un mensaje de error.
      Si se introduce un espacio como cadena vacia, no se podra avanzar. Se muestra un mensaje diciendo que el formato es erroneo.
-     NOTA: falta tratar el error de enviar el campo del formulario vacio.
   ¿Se distingue entre mayusculas y minusculas?
      Usando el metodo 'downcase' nos aseguramos que cualquier entrada se transforme a minusculas.

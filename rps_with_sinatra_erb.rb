@@ -17,8 +17,10 @@ get '/throw' do
 	redirect "/throw/#{@params[:play].to_sym}"
 end
 
-get '/throw/:type' do
+get '/throw/:type?' do
   # the params hash stores querystring and form data
+  halt(403, "Empty string doesn't allow!") if params[:type].nil? 
+
   @player_throw = params[:type].to_sym.downcase
   
   halt(403, "You must throw one of the following: '#{@throws.join(', ')}'") unless @throws.include? @player_throw

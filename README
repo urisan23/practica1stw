@@ -1,7 +1,7 @@
 Practica 1 - Mejorar Rock, Paper, Scissors
 
 - Mejorar ejemplo para que se solicite en un formulario la jugada. (hecho)
-- Mejorar mediante una hoja de estilo la presentacion de los resultados. (hecho, style.css)
+- Mejorar mediante una hoja de estilo la presentacion de los resultados. (hecho, style2.css)
 - ¿Que ocurre si la jugada es erronea? ¿Y si es la cadena vacia?  
      Si la jugada es erronea se produce una interrupcion y se genera un mensaje de error.
      Si se introduce un espacio como cadena vacia, no se podra avanzar. Se muestra un mensaje diciendo que el formato es erroneo.

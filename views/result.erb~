@@ -8,6 +8,6 @@
 <p> Computer win: <%=h session[:loose] || 0 %> </p>
 <p> Tie: <%=h session[:tie] || 0 %> </p>
 
-<form method="post" action="/clear">
+<form method="get" action="/clear">
   <input type="submit" value="Clear Session" />
 </form>

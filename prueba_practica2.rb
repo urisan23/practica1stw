@@ -1,16 +1,30 @@
 require 'sinatra'
 require 'erb'
 
+set :session_secret, ENV["SESSION_KEY"] || 'too secret'
+
 # before we process a route we'll set the response as plain text
 # and set up an array of viable moves that a player (and the
 # computer) can perform
+enable :sessions
+
+helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+end
+  
 before do
   @defeat = { rock: :scissors, paper: :rock, scissors: :paper}
   @throws = @defeat.keys
 end
 
 get '/' do
-  erb :index
+  if session[:win] == nil
+    session[:win]=0
+    session[:loose]=0
+    session[:tie]=0
+  end
+  erb :index, :locals => { :session => session }
 end
 
 get '/throw/' do
@@ -25,12 +39,27 @@ get '/throw/' do
 
   if @player_throw == @computer_throw 
     @answer = "There is a tie"
-    erb :result
+    session[:tie] += 1
+    erb :result, :locals => { :session => session }
   elsif @player_throw == @defeat[@computer_throw]
     @answer = "Computer wins; #{@computer_throw} defeats #{@player_throw}"
-    erb :result
+    session[:loose] += 1
+    erb :result, :locals => { :session => session }
   else
     @answer = "Well done. #{@player_throw} beats #{@computer_throw}"
-    erb :result
+    session[:win] += 1
+    erb :result, :locals => { :session => session }
   end
+end
+
+post '/' do
+  session[:win]=0
+  session[:loose]=0
+  session[:tie]=0
+  redirect '/'
+end
+
+post '/clear' do
+  session.clear
+  redirect '/'
 end

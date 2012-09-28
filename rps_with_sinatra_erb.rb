@@ -16,6 +16,7 @@ end
 get '/throw/' do
   texto = :option.to_s
   texto.gsub!(/\?*\=/, '')
+  texto = texto.downcase
   # the params hash stores querystring and form data
   @player_throw = params[texto.to_sym].to_sym
 

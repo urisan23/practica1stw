@@ -9,6 +9,13 @@ before do
   @throws = @defeat.keys
 end
 
+<<<<<<< HEAD
+=======
+get '/' do
+   erb :index
+end
+
+>>>>>>> a4d01e931d5cd14ec06d93a0b49e15ea9bc61fd0
 get '/throw/:type' do
   # the params hash stores querystring and form data
   @player_throw = params[:type].to_sym
@@ -28,4 +35,7 @@ get '/throw/:type' do
     erb :index
   end
 end
+<<<<<<< HEAD
 __END__
+=======
+>>>>>>> a4d01e931d5cd14ec06d93a0b49e15ea9bc61fd0

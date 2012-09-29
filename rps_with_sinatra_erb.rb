@@ -3,7 +3,7 @@ require 'erb'
 
 # before we process a route we'll set the response as plain text
 # and set up an array of viable moves that a player (and the
-# computer) can perform
+# computer) can perform.
 before do
   @defeat = { rock: :scissors, paper: :rock, scissors: :paper}
   @throws = @defeat.keys

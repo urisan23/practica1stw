@@ -18,18 +18,18 @@ get '/throw/' do
 	@option = params['option'.to_sym].downcase
 	@player_throw = @option.to_sym
 
-  halt(403, "You must throw one of the following: '#{@throws.join(', ')}'") unless @throws.include? @player_throw
+  halt(403, "Debes seleccionar una de las siguientes opciones: '#{@throws.join(', ')}'") unless @throws.include? @player_throw
 
   @computer_throw = @throws.sample
 
   if @player_throw == @computer_throw 
-    @answer = "There is a tie"
+    @answer = "Se ha producido un empate."
     #erb :index
   elsif @player_throw == @defeat[@computer_throw]
-    @answer = "Computer wins; #{@computer_throw} defeats #{@player_throw}"
+    @answer = "El ordenador gana; #{@computer_throw} derrota a #{@player_throw}."
     #erb :index
   else
-    @answer = "Well done. #{@player_throw} beats #{@computer_throw}"
+    @answer = "Muy bien. #{@player_throw} vence a #{@computer_throw}."
     #erb :index
   end
   erb :resultado
